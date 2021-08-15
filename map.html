@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <title>Home</title>
+		<link rel="stylesheet" href="style.css">
+		<script type="module" src="script.js"></script>
+	</head>
+	
+	<body>
+		<!--Nav-->
+		<div class="container-fluid">
+            <nav class="navbar navbar-default">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="map.html">Map</a></li>
+                    <li><a href="mission.html">Mission</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!--Jumbotron-->
+        <div class="container-fluid">
+            <div class="jumbotron header">
+                <center><h1>Map</h1> </center>
+                <center><p>Check out our map!<p> </center>
+            </div>
+        </div>
+    
+	
+   <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        const tufts = { lat: 42.4085, lng: -71.1183 };
+        const harvard = { lat: 42.3770, lng: -71.1167 };
+        const smfa = { lat: 42.3385, lng: -71.0966 };
+        const loganAirport = {lat: 42.3656, lng: -71.0096};
+        const quincy = {lat: 42.3602, lng: -71.0551};
+        const mit = {lat: 42.3601, lng: -71.0942};
+        const mikes = {lat: 42.3642, lng: -71.0542};
+        const wpi = {lat: 42.2743, lng: -71.8081};
+        const wellesley = {lat: 42.2968, lng: -71.2924};
+        const bu = {lat: 42.3505, lng: -71.1054};
+        const olin = {lat: 42.2930, lng: -71.2638};
+        const franklin = {lat: 42.3052, lng: -71.0903};
+        const harbor = {lat: 42.3562, lng: -71.0504};
+        
+        
+        
+        
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 10,
+          center: tufts,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: tufts,
+          title:"Tufts!",
+          map: map,
+          url : "https://teamup.com/ksvecp9ya9zwf1qbm6/events/982824229",
+          
+        });
+        const marker2 = new google.maps.Marker({
+          position: harvard,
+          title:"Harvard",
+          map: map,
+          url: "https://teamup.com/ksvecp9ya9zwf1qbm6/events/982828977"
+          
+        });
+        const marker3 = new google.maps.Marker({
+          position: smfa,
+          title:"SMFA",
+          map: map,
+          
+        });
+        const marker4 = new google.maps.Marker({
+          position: loganAirport,
+          title:"Boston Logan Airport",
+          map: map,
+          
+        });
+        const marker5 = new google.maps.Marker({
+          position: quincy,
+          title:"Quincy Market!",
+          map: map,
+          
+        });
+        
+        const marker6 = new google.maps.Marker ({
+        	position: mit,
+        	title: "MIT",
+        	map: map,
+        	url: "https://teamup.com/ksvecp9ya9zwf1qbm6/events/982836047"
+        });
+        const marker7 = new google.maps.Marker ({
+        	position: mikes,
+        	title: "Mike's Pastry",
+        	map: map,
+        	url: "https://teamup.com/ksvecp9ya9zwf1qbm6/events/982827245"
+        });
+        const marker8 = new google.maps.Marker ({
+        	position: wpi,
+        	title: "WPI",
+        	map: map,
+        	url: "https://teamup.com/ksvecp9ya9zwf1qbm6/events/982829399"
+        });
+        const marker9 = new google.maps.Marker ({
+        	position: wellesley,
+        	title: "Wellesley",
+        	map: map,
+        	url: "https://teamup.com/ksvecp9ya9zwf1qbm6/events/982827248"
+        });
+        const marker10 = new google.maps.Marker ({
+        	position: bu,
+        	title: "Boston University",
+        	map: map,
+        	url: "https://teamup.com/ksvecp9ya9zwf1qbm6/events/982829592"
+        });
+        const marker11 = new google.maps.Marker ({
+        	position: olin,
+        	title: "Olin College of Engineering",
+        	map: map,
+        });
+        const marker12 = new google.maps.Marker ({
+        	position: franklin,
+        	title: "Franklin Park Zoo",
+        	map: map,
+        });
+        const marker13 = new google.maps.Marker ({
+        	position: harbor,
+        	title: "Boston Harbor",
+        	map: map,
+        	url: "https://teamup.com/ksvecp9ya9zwf1qbm6/events/982829643"
+        });
+        
+        google.maps.event.addListener(marker, 'click', function() {
+    		window.location.href = marker.url;
+		});
+		
+		google.maps.event.addListener(marker5, 'click', function() {
+    		window.location.href = marker5.url;
+		});
+		
+		google.maps.event.addListener(marker6, 'click', function() {
+    		window.location.href = marker6.url;
+		});
+		
+		google.maps.event.addListener(marker7, 'click', function() {
+    		window.location.href = marker7.url;
+		});
+		
+		google.maps.event.addListener(marker8, 'click', function() {
+    		window.location.href = marker8.url;
+		});
+		
+		google.maps.event.addListener(marker9, 'click', function() {
+    		window.location.href = marker9.url;
+		});
+		
+        google.maps.event.addListener(marker10, 'click', function() {
+    		window.location.href = marker10.url;
+		});
+		
+		google.maps.event.addListener(marker13, 'click', function() {
+    		window.location.href = marker13.url;
+		});
+      }
+
+      /**
+			var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+			var mapOptions = {
+			zoom: 4,
+			center: myLatlng
+			}
+			var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+			
+			var marker = new google.maps.Marker({
+			    position: myLatlng,
+			    title:"Hello World!"
+			});
+			
+			// To add the marker to the map, call setMap();
+			marker.setMap(map);      
+      
+      **/
+
+      
+    </script>
+    
+  
+    
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo0LnDGn5zegl1dGMSq7qxdnLD3baEqYA&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+    
+        
+	</body>
+</html>
